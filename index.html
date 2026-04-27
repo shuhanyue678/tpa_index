@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Trade Policy Activity Index – TPA Index</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e8bb486c33c2d481aa0f247b268cba56.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ba771c858180e3c1122ae989c1a3823c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles/custom.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">TPA Index</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#about"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#chart"> 
+<span class="menu-text">Interactive Chart</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#downloads"> 
+<span class="menu-text">Downloads</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html#citation"> 
+<span class="menu-text">Citation</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025220-source-pdf.pdf"> 
+<span class="menu-text">Paper (PDF)</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Trade Policy Activity Index</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<script>var TPA_DATA = {"dates":["2010-01-01","2010-02-01","2010-03-01","2010-04-01","2010-05-01","2010-06-01","2010-07-01","2010-08-01","2010-09-01","2010-10-01","2010-11-01","2010-12-01","2011-01-01","2011-02-01","2011-03-01","2011-04-01","2011-05-01","2011-06-01","2011-07-01","2011-08-01","2011-09-01","2011-10-01","2011-11-01","2011-12-01","2012-01-01","2012-02-01","2012-03-01","2012-04-01","2012-05-01","2012-06-01","2012-07-01","2012-08-01","2012-09-01","2012-10-01","2012-11-01","2012-12-01","2013-01-01","2013-02-01","2013-03-01","2013-04-01","2013-05-01","2013-06-01","2013-07-01","2013-08-01","2013-09-01","2013-10-01","2013-11-01","2013-12-01","2014-01-01","2014-02-01","2014-03-01","2014-04-01","2014-05-01","2014-06-01","2014-07-01","2014-08-01","2014-09-01","2014-10-01","2014-11-01","2014-12-01","2015-01-01","2015-02-01","2015-03-01","2015-04-01","2015-05-01","2015-06-01","2015-07-01","2015-08-01","2015-09-01","2015-10-01","2015-11-01","2015-12-01","2016-01-01","2016-02-01","2016-03-01","2016-04-01","2016-05-01","2016-06-01","2016-07-01","2016-08-01","2016-09-01","2016-10-01","2016-11-01","2016-12-01","2017-01-01","2017-02-01","2017-03-01","2017-04-01","2017-05-01","2017-06-01","2017-07-01","2017-08-01","2017-09-01","2017-10-01","2017-11-01","2017-12-01","2018-01-01","2018-02-01","2018-03-01","2018-04-01","2018-05-01","2018-06-01","2018-07-01","2018-08-01","2018-09-01","2018-10-01","2018-11-01","2018-12-01","2019-01-01","2019-02-01","2019-03-01","2019-04-01","2019-05-01","2019-06-01","2019-07-01","2019-08-01","2019-09-01","2019-10-01","2019-11-01","2019-12-01","2020-01-01","2020-02-01","2020-03-01","2020-04-01","2020-05-01","2020-06-01","2020-07-01","2020-08-01","2020-09-01","2020-10-01","2020-11-01","2020-12-01","2021-01-01","2021-02-01","2021-03-01","2021-04-01","2021-05-01","2021-06-01","2021-07-01","2021-08-01","2021-09-01","2021-10-01","2021-11-01","2021-12-01","2022-01-01","2022-02-01","2022-03-01","2022-04-01","2022-05-01","2022-06-01","2022-07-01","2022-08-01","2022-09-01","2022-10-01","2022-11-01","2022-12-01","2023-01-01","2023-02-01","2023-03-01","2023-04-01","2023-05-01","2023-06-01","2023-07-01","2023-08-01","2023-09-01","2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01","2025-10-01"],"series":[{"id":"Global","label":"Global TPA Index","color":"#004C97","values":[null,null,36.1419,26.0608,24.3364,56.2298,38.7336,31.8681,5.4922,-6.656,-32.9525,-17.3706,-3.022,17.4756,13.2987,-2.6275,-22.8028,-33.1783,-30.717,-2.5964,14.4228,18.8994,-15.8048,-75.0364,-150.8732,-173.2526,-153.7627,-122.5512,-120.3648,-111.6603,-111.0918,-139.1459,-158.5908,-122.2445,-39.2085,34.2724,64.0697,72.4052,63.439,76.9241,109.4817,110.3506,92.6794,62.8368,44.0229,29.3656,22.3389,23.7074,51.6267,50.9466,31.9287,15.2888,-26.3226,-4.0778,7.412,27.3552,37.3849,20.5731,22.2592,20.9711,44.703,65.8554,90.5122,122.0839,142.4364,151.0336,158.2419,170.5498,203.7379,204.9791,173.4908,130.1384,90.6535,108.0991,114.2576,124.0341,120.9198,92.6498,100.415,96.6801,94.9827,39.9263,-2.5349,-19.878,-31.5071,-41.9127,-60.9826,-74.1244,-67.6135,-72.1809,-72.3105,-22.6308,-58.3226,-69.159,-97.2871,-29.6587,75.897,89.2933,104.0664,63.4418,79.6023,106.3756,112.8925,129.0409,140.4984,171.2704,163.2841,132.0418,98.8557,55.9785,3.3066,-41.7116,-19.4419,17.881,85.5418,91.0512,104.3837,48.6952,42.7905,47.1783,58.3632,67.7815,126.3283,222.0315,237.0892,203.8637,171.6601,181.1666,196.7103,217.6098,213.7038,200.2427,163.8942,176.785,160.3486,151.8413,116.2706,142.6327,81.2147,-29.0722,-192.2141,-375.1333,-257.6656,-113.4419,141.2747,190.0691,251.7819,276.2597,266.1004,241.1933,247.1481,272.373,285.082,327.8254,323.6614,316.2176,283.8558,273.7118,260.5225,217.661,214.183,208.5059,212.0491,210.5253,214.8156,217.9621,231.8993,257.13,293.1252,270.1396,240.7966,222.8399,230.1611,249.7598,270.8262,267.2162,258.027,287.4772,276.9346,271.1554,254.7233,303.5556,338.2564,365.6591,371.4003,366.4022,379.338,413.9283,466.0112,467.617]},{"id":"Facilitating","label":"Facilitating measures","color":"#2E8B57","values":[null,null,-46.5816,-32.3888,4.3279,76.2977,90.9509,68.2145,-3.0154,-47.3156,-55.5647,-19.7762,29.484,42.8702,35.0388,19.5398,1.6184,-1.497,8.0741,50.7111,59.223,32.0485,-39.7428,-99.6894,-168.494,-215.0421,-234.6455,-235.7444,-230.2289,-235.2845,-200.1661,-169.3623,-120.1431,-77.0993,-17.6455,22.9595,37.8816,48.5536,52.0714,71.7572,91.2347,119.8473,118.7737,105.7478,69.8132,44.364,14.2612,7.3934,7.4099,6.1525,0.9128,22.5485,14.4728,5.5865,-5.9271,-9.0441,-9.0372,-25.0639,-7.8208,2.9896,13.7984,11.9926,35.9862,77.0707,117.5351,143.5068,142.3824,150.1382,159.2575,152.5345,109.9325,81.2584,73.9242,94.1472,92.9747,76.3419,60.8591,35.7115,21.2075,21.3201,11.3405,-13.7356,-38.3456,-37.7833,-29.8824,-27.3412,-26.0373,-17.4288,-5.3432,-4.5309,-2.9852,-9.4064,-56.4563,-89.3551,-90.0713,-21.7674,64.814,94.4887,90.7596,56.4945,58.3305,77.6108,79.8237,86.3839,88.3143,111.4006,100.6696,72.746,32.1952,-6.3595,-50.2091,-83.3072,-74.4817,-39.035,11.0509,18.0068,13.5871,-29.2886,-43.5411,-30.9539,-0.9818,56.9579,139.8078,223.9577,213.7794,163.8891,136.3145,157.0718,188.0355,211.9349,217.8927,187.577,136.2871,119.6373,105.9396,88.204,49.774,27.0326,-29.818,-136.326,-234.6441,-293.0231,-198.3278,-80.2691,60.5054,130.4892,186.2783,225.7308,251.7607,275.4495,300.0471,310.9641,311.0035,309.8706,295.8154,270.3726,240.4221,221.037,203.7557,177.4938,165.163,153.4669,152.5753,162.0443,176.1017,192.6434,203.8448,218.8849,235.1483,227.3086,211.3307,201.2687,191.1948,198.2366,197.3646,199.4591,187.7645,192.9435,182.9663,177.7079,175.9376,204.7706,231.0376,245.8662,264.1001,280.9721,308.6751,321.6424,334.2528,317.6395]},{"id":"Other","label":"Other (non-facilitating)","color":"#C8922A","values":[null,null,76.3164,61.8518,48.0336,23.0815,2.3232,2.5389,22.3915,30.3503,-1.1532,-6.9868,-28.4294,0.7287,8.6711,-1.8267,-15.3645,-32.4365,-29.7113,-41.7428,-28.4006,-15.8964,-4.8612,-62.6366,-123.1773,-141.589,-103.4124,-65.131,-57.901,-32.81,-60.4955,-105.8804,-154.6289,-117.3395,-45.3184,36.4444,83.5818,96.5303,90.0508,92.8269,125.0581,96.5599,69.7317,30.672,27.4152,17.9126,31.5808,37.7455,76.1786,73.6698,55.064,-0.0189,-41.0557,0.5221,34.8443,64.6949,64.8101,59.5468,37.0251,36.358,61.1389,113.7202,138.0665,161.6631,158.4441,151.4435,170.39,186.2152,227.2919,235.6783,241.0045,200.0746,142.0954,125.5667,126.429,149.1609,146.2404,128.8686,145.1799,135.9869,138.761,83.3839,42.2145,8.9192,-11.129,-24.6104,-49.1977,-77.0286,-78.2449,-83.8452,-83.5119,-22.8623,-16.9497,-3.1982,-25.7434,16.7886,92.1973,108.9141,130.0781,111.6116,121.0614,132.0362,144.9826,162.3289,192.7395,210.045,209.7292,173.7808,148.8999,109.1656,73.0938,45.2507,68.1321,91.7671,134.3382,146.5034,156.1425,125.4397,119.6694,115.4622,117.1054,100.5545,134.9348,194.9537,241.531,237.8809,215.2642,204.5168,211.63,225.4578,215.4738,215.3447,204.4801,208.4557,182.7391,176.2857,161.9431,179.9601,104.349,8.0992,-161.0125,-335.2125,-260.036,-101.296,154.931,231.1608,300.1513,323.922,295.0342,244.3063,231.1813,267.7036,301.665,358.9016,363.7228,363.2496,339.7982,331.3959,305.9773,263.4059,248.6962,260.9217,274.3953,278.7723,285.7261,281.7237,294.6641,317.9271,343.4514,324.2266,291.071,275.0578,292.9913,308.8118,334.6704,322.6774,318.7887,341.0224,334.8752,336.2942,338.0358,383.2617,416.0488,444.039,443.4629,431.7845,428.2591,473.554,526.1235,549.2867]},{"id":"Restrictive","label":"Restrictive (subset of Other)","color":"#C0392B","values":[null,null,-5.0086,-14.2958,-3.3132,14.6315,17.8499,27.9092,22.2356,22.0858,-5.8109,-0.3742,-13.7616,15.8897,36.9828,11.7465,-22.6525,-36.7933,14.3209,38.0167,48.7684,25.7887,-7.8198,-80.4422,-135.0164,-156.1257,-117.292,-75.5468,-46.6113,-51.3844,-129.3791,-223.0274,-272.9311,-214.5707,-114.2395,-31.2017,15.1265,46.7048,52.4452,66.7546,94.14,77.2354,47.1664,18.2958,16.099,20.737,32.99,58.1987,81.8326,51.343,-3.0002,-44.3256,-66.9798,-21.4381,21.7902,57.5907,67.6004,58.2906,26.0984,18.3182,35.0323,96.3207,123.7088,120.6148,119.0251,124.1167,134.1751,130.2216,140.686,136.6403,130.1392,77.8146,47.1652,41.0545,71.3635,85.5463,62.3673,32.1559,14.5038,6.624,4.7868,0.937,0.5043,-7.8288,-21.7958,-43.6113,-83.4794,-125.9494,-150.1863,-158.3807,-124.8563,-41.4744,-25.1133,-88.1351,-115.341,-77.6202,25.5618,29.5728,36.1761,27.7292,41.8719,61.8119,66.8672,73.7001,82.3027,77.1502,57.7034,22.4873,-4.6301,-49.2045,-75.6061,-72.7421,-32.4286,-12.4954,7.1326,12.7509,9.8687,-37.7673,-55.7994,-34.8153,20.5946,38.0688,72.988,111.337,139.373,136.4744,128.6131,129.8284,116.7959,97.998,82.9096,79.5725,76.4527,77.5674,72.3424,78.8292,63.9638,35.349,-39.1146,-84.6967,-134.8319,-170.4693,-101.9972,5.6509,167.5902,257.1018,348.7916,390.3298,375.5307,339.3493,334.5961,350.277,370.0521,402.56,412.0738,421.1177,412.3477,412.1845,391.1868,355.1697,343.0855,355.4234,372.4158,391.849,395.4371,373.1847,358.7967,376.5017,403.9741,392.4299,362.0689,356.1686,381.7625,398.0065,419.35,426.8695,438.842,448.4438,448.6042,463.695,508.1713,552.8397,586.6667,630.6349,655.8037,681.1811,698.0922,720.7499,732.9156,715.8499]},{"id":"Remaining_Other","label":"Remaining other (subset of Other)","color":"#7B4F9E","values":[null,null,155.2953,126.541,82.545,38.8667,14.4402,10.0593,40.3304,40.9859,13.8031,-23.8136,-56.2353,-66.2581,-80.3512,-77.1991,-56.9046,-44.4666,-52.6862,-55.4765,-44.5547,-19.9709,-17.0074,-41.3063,-68.221,-51.2017,-42.7724,-32.0038,-45.3171,1.4737,33.9886,58.2991,56.3649,77.2927,109.394,155.9324,190.8235,202.04,211.0356,192.2826,199.7665,182.0548,189.6711,180.0484,170.2702,153.5667,147.9294,138.4179,174.5669,204.2148,224.2395,198.4875,169.1935,192.6625,195.6517,208.0341,197.4526,198.0625,188.5858,192.3646,219.2804,247.6086,274.0139,307.4393,329.1032,332.0163,343.4393,353.2249,375.6852,380.7155,377.7992,355.0732,309.2546,292.9168,288.0328,316.7764,329.1224,333.9046,344.2048,341.279,327.9821,267.7385,221.0012,181.0192,165.622,149.3075,143.9181,133.457,133.39,121.8566,87.6146,79.052,69.114,106.3044,129.2848,178.1368,241.2813,277.6747,289.5242,271.4242,263.7649,272.5157,280.1616,294.1132,306.9801,316.3938,329.9826,338.1302,345.8041,331.0228,293.1296,261.0523,263.8354,286.9083,322.2753,334.2462,343.1382,306.9677,292.1239,270.2002,276.9663,274.659,319.0469,381.3119,419.8096,416.1305,401.8769,415.883,443.6882,427.0029,399.0191,401.4283,427.9574,446.1165,425.4018,418.2048,416.2983,438.9539,409.0845,358.846,273.1207,286.6878,352.6648,419.9268,423.7221,402.5823,411.118,423.0257,420.2108,402.1026,403.1589,436.1547,470.9843,496.3855,511.7386,520.6728,525.9137,522.9037,513.8507,504.6947,492.6582,487.042,487.714,481.8709,475.6519,469.5229,487.1619,507.4323,527.8514,536.0616,547.0482,560.7279,580.399,601.2872,623.222,609.6482,596.1228,594.7819,583.1887,567.9404,550.8197,576.7747,605.8309,620.8061,616.8231,604.1592,613.2352,653.8438,705.8525,736.8052]},{"id":"G20","label":"G20 economies","color":"#0071BC","values":[null,null,59.4187,47.6378,52.6282,56.3835,-18.3355,-11.4193,-1.0916,31.238,-22.4516,-25.9053,-25.3534,17.5583,20.4177,8.2664,-22.1403,-37.8183,20.3193,0.2089,10.7157,-22.2829,-24.4804,-82.1204,-174.5055,-148.1083,-88.8509,-23.8584,-18.3325,-22.4682,-14.5003,-51.784,-114.7203,-102.0467,-34.6468,76.4092,98.281,105.9079,72.0448,72.061,94.5681,110.7205,117.2362,99.7911,74.7587,20.048,7.6761,13.071,84.8352,104.2187,107.2595,70.8564,31.4446,48.3828,88.2003,100.1346,111.8152,99.7846,112.4337,109.3744,112.1565,98.9421,117.7917,155.6024,209.0149,229.8709,228.9226,227.4509,250.6707,244.1015,222.3689,189.1317,179.0064,198.7416,188.7269,177.058,167.7534,155.7753,168.7505,172.8096,189.9785,143.4176,110.1106,82.7905,79.631,65.0063,50.4927,29.9645,25.9988,22.4646,37.9174,114.3863,87.8652,100.0606,68.471,130.128,196.4485,217.6504,237.1285,213.9893,226.8675,239.0271,230.7564,235.3196,248.1405,273.489,260.1001,229.4347,199.2814,170.1032,131.1411,104.792,132.2263,171.5261,229.8392,234.4514,235.5581,167.118,161.6969,163.0414,200.7087,178.6264,199.3585,245.4297,281.8173,273.4518,256.0669,243.8918,252.7652,273.2102,273.9107,247.6114,208.786,222.2111,224.1857,223.6576,194.2625,224.0591,166.0543,75.4281,-74.918,-219.2044,-124.8281,3.9807,221.2048,254.3851,288.992,310.2654,296.6965,272.3322,268.3951,300.7785,329.9206,368.8464,370.8575,367.3983,349.7913,343.6717,336.6754,292.1055,291.5335,283.378,301.6103,301.1368,322.0192,331.8991,356.9229,379.1208,400.0337,371.1753,339.8533,336.7566,348.6908,378.6018,391.052,379.0665,352.9625,368.1685,342.1089,340.8566,340.6682,405.7717,444.6583,469.9968,459.0487,421.8863,416.3732,456.9945,527.7472,535.9151]},{"id":"Non_G20","label":"Non-G20 economies","color":"#E67E22","values":[null,null,37.2186,18.4378,11.0602,3.8978,7.419,-13.7877,-24.9119,-26.0397,6.3175,35.9644,32.1048,9.8603,5.3693,-2.2854,-1.3872,-7.8227,-32.2282,-16.252,-18.5282,-7.5923,-21.3284,-31.1874,-48.1513,-83.8004,-134.6286,-156.7333,-169.6059,-128.8566,-94.321,-67.4231,-51.564,-40.6445,-15.0367,8.9336,37.4434,60.8526,84.1468,99.6468,126.1526,126.1142,112.8435,87.9226,65.6856,62.7302,66.6967,70.8367,66.0768,41.6434,6.1723,-3.2475,-37.0137,-31.8389,-52.4601,-33.7061,-30.4074,-24.9717,-26.8052,2.3538,41.5737,73.9705,74.1148,72.427,71.0299,90.6684,119.0222,144.455,153.6102,126.8926,121.2293,110.0105,100.9112,87.0876,98.2146,124.4427,136.7404,114.9072,91.4492,58.0723,11.1527,-26.608,-53.8561,-40.9032,-44.1621,-48.7304,-80.2632,-86.6834,-62.2559,-69.8026,-121.1813,-163.8844,-171.7577,-153.6015,-122.7588,-99.9023,-61.9334,-79.2871,-71.4752,-71.2281,-48.7798,-28.0429,-18.5974,5.8634,0.5891,0.5776,7.1567,13.7788,-0.5822,-60.7477,-117.1156,-134.301,-120.4225,-118.6778,-105.0732,-116.7246,-105.7457,-132.3719,-131.2482,-89.0688,-63.9106,-3.0634,73.4431,175.9697,191.6888,167.6371,146.9492,165.7575,172.9887,137.1597,112.1845,119.8493,151.6519,158.8301,141.7076,126.458,117.6103,111.2616,90.4402,23.0761,-15.2425,4.0224,112.3625,184.2989,205.8047,216.8559,266.167,293.4429,300.8808,274.422,277.4037,266.7676,250.1918,250.2647,257.832,270.3829,266.0275,250.575,215.289,183.1751,152.8708,140.041,118.9058,110.9671,75.7664,41.1722,36.1409,79.1213,137.6793,141.2846,136.2961,117.4399,118.4439,104.5783,125.9386,131.3252,128.6211,136.409,150.0835,170.5909,158.4362,154.1101,170.4294,212.9654,267.2121,293.65,308.8779,305.8047,302.4106,274.523]},{"id":"GDP_weighted","label":"GDP-weighted index","color":"#8B6914","values":[null,null,-21.3575,-20.9366,0.4838,12.7715,-61.1738,-21.2946,-9.9619,9.9357,-58.8079,-43.2706,-20.1346,39.4461,72.5146,75.6613,28.1535,-8.6684,15.0132,-14.8623,4.3157,4.1267,46.196,-6.3433,-112.2303,-106.7265,-27.2851,63.2933,41.2007,-0.4811,-36.586,-80.5792,-120.4096,-81.2826,5.8851,84.384,100.7342,109.5723,88.0644,76.4398,73.8245,94.1817,102.9261,97.1959,67.3696,25.5848,23.4709,45.5646,138.9295,175.286,186.5321,125.9785,93.7353,109.7978,145.1828,128.6833,127.6735,126.6847,135.0251,117.4681,98.3978,85.5194,84.5243,142.4671,171.8404,201.4082,180.7766,206.1429,224.6212,249.0184,229.8225,213.1062,199.909,238.2246,241.4772,217.7167,199.2753,173.1735,171.1885,152.1333,173.6749,190.9377,178.6607,131.6853,59.7595,34.1256,45.3516,72.3036,77.1356,87.1286,106.2194,201.2872,171.6095,89.076,34.9249,82.3117,192.8152,195.543,206.7394,209.9974,242.2879,271.9585,266.3871,278.2608,303.1974,296.6612,294.2436,239.0137,251.4603,187.803,175.3622,145.6414,186.4906,203.3951,267.5001,268.3071,268.6965,180.6951,174.005,190.7749,239.7529,220.6224,234.3559,244.861,282.2517,247.7176,233.7233,211.0221,246.0096,273.2413,290.0475,264.0423,226.5071,221.189,211.2436,224.4442,198.7977,225.2242,173.9392,151.4618,38.8463,-46.932,14.3691,105.3881,250.5935,267.8548,279.3022,295.2982,260.8422,245.1369,215.9496,230.7902,255.2523,318.475,340.2094,336.8057,285.4741,279.2588,255.5567,239.8724,237.681,264.7175,268.2664,254.4786,244.4716,264.9228,284.906,335.9964,360.9877,354.203,334.6255,326.7389,306.9224,304.3492,316.9226,317.5468,322.6522,336.8843,334.6056,329.947,348.8276,398.742,432.5315,451.7721,472.1056,458.9803,470.2472,522.8168,580.4001,540.9332]}]} ;</script>
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════════════════ -->
+<section class="hero-section">
+  <div class="hero-center">
+    <h1 class="hero-title">
+      <u>T</u>rade <u>P</u>olicy <u>A</u>ctivity Index
+    </h1>
+    <span class="hero-abbrev"></span>
+    <p class="hero-sub">
+      A novel composite indicator measuring the evolution of global trade policy
+      since the Global Financial Crisis, covering 197 countries and territories.
+    </p>
+  </div>
+</section>
+
+<!-- meta strip -->
+<div class="meta-strip">
+  <div class="site-container">
+    <div class="meta-inner">
+      <span class="badge-updated">✓ &nbsp;Updated through October 2025</span>
+      <span class="meta-authors">
+        <!-- TODO: wrap each name in <a href="[url]"> when personal pages available -->
+        Samuele Centorrino &nbsp;·&nbsp; Antonia Diakantoni &nbsp;·&nbsp;
+        Alexander Keck &nbsp;·&nbsp; Michele Ruta &nbsp;·&nbsp;
+        Monika Sztajerowska &nbsp;·&nbsp; Yuting Wei
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ ABOUT ══════════════════════════════════════════════════════════════ -->
+<section id="about" class="page-section">
+  <div class="site-container">
+    <h2 class="section-heading anchored">About the TPA Index</h2>
+
+    <p class="about-lead">
+      The Trade Policy Activity (TPA) Index is a composite indicator of global trade policy
+      activity, constructed using a Dynamic Factor Model applied to comprehensive data on
+      trade policy interventions across 197 countries and territories since January 2010.
+      The index documents a structural shift around 2019, reflecting a substantial and
+      persistent expansion in the use of trade policy measures globally.
+    </p>
+
+    <div class="two-col-grid">
+      <div class="two-col-item">
+        <h3 class="anchored">How has it been constructed?</h3>
+        <p>
+          The TPA Index is estimated using a Dynamic Factor Model (DFM) on a large
+          cross-section of monthly trade policy intervention data sourced from the
+          Global Trade Alert (GTA) and WTO databases. The model extracts a common
+          factor from the co-movement across country- and measure-level series,
+          interpreted as aggregate global trade policy activity. All series are
+          smoothed using a three-month moving average and normalized so that the
+          average equals zero over January 2010–December 2011. The index additionally
+          incorporates Mixed Data Sampling (MIDAS) regressions on high-frequency GTA
+          data to enable real-time nowcasting of trade policy shifts.
+        </p>
+      </div>
+      <div class="two-col-item">
+        <h3 class="anchored">What does it include?</h3>
+        <p>
+          The dataset provides eight monthly series from January 2010 to October 2025:
+          a <strong>Global Factor</strong> (baseline worldwide index);
+          a <strong>Facilitating</strong> sub-index (trade-liberalizing measures and rollbacks);
+          an <strong>Other</strong> sub-index (non-facilitating measures including tariff
+          increases, bans, quotas, and subsidies);
+          a <strong>Restrictive</strong> sub-index (trade-restricting subset of Other);
+          a <strong>Remaining other</strong> sub-index (largely subsidies and industrial policy);
+          <strong>G20</strong> and <strong>Non-G20</strong> economy indices;
+          and a <strong>GDP-weighted</strong> index using pre-sample GDP shares (2005–2009)
+          as time-invariant weights.
+        </p>
+      </div>
+    </div>
+
+    <div class="two-col-grid">
+      <div class="two-col-item">
+        <h3 class="anchored">Why is it different from other measures?</h3>
+        <p>
+          Existing trade policy measures tend to focus on tariffs alone or rely on
+          annual survey data. The TPA Index covers the full range of policy instruments —
+          tariffs, non-tariff barriers, export restrictions, and industrial policy — at
+          monthly frequency across a near-global sample. Its DFM framework extracts the
+          underlying co-movement rather than simply counting interventions, and the MIDAS
+          nowcasting component enables real-time monitoring well ahead of official data releases.
+        </p>
+      </div>
+      <div class="two-col-item">
+        <h3 class="anchored">What are the key findings?</h3>
+        <p>
+          The TPA Index identifies a structural break around 2019 — a persistent expansion
+          in global trade policy activity departing from the post-GFC baseline. Beyond this
+          trend, the index captures cyclical spikes during the 2018–19 US–China trade war,
+          COVID-19 supply chain disruptions, and the post-2022 wave of industrial policy.
+          G20 and non-G20 economies differ significantly in the timing, intensity, and
+          instrument mix of their trade policy responses.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ INTERACTIVE CHART ══════════════════════════════════════════════════ -->
+<section id="chart" class="page-section section-alt">
+  <div class="site-container">
+    <h2 class="section-heading anchored">Interactive Chart</h2>
+
+    <div class="chart-controls">
+      <div class="ctrl-group">
+        <label>Start Year</label>
+        <input type="number" id="yr-start" value="2010" min="2010" max="2025">
+      </div>
+      <div class="ctrl-group">
+        <label>End Year</label>
+        <input type="number" id="yr-end" value="2025" min="2010" max="2025">
+      </div>
+      <div class="ctrl-group">
+        <label style="visibility:hidden">go</label>
+        <button class="ctrl-btn" onclick="tpaUpdate()">Update</button>
+      </div>
+    </div>
+
+    <div class="series-picker" id="series-picker"></div>
+
+    <div id="tpa-chart-out" style="width:100%;height:560px;min-height:560px;"></div>
+
+    <p class="chart-note">
+      <em>Note:</em> Three-month moving average applied. Normalized: mean&nbsp;=&nbsp;0 over Jan 2010–Dec 2011; stationary component rescaled to match the standard deviation of the baseline global factor over Jan 2010–Dec 2019. Dashed vertical line: estimated structural break (~2019). Shaded band: COVID-19 period (Mar 2020–Mar 2021).
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ DOWNLOADS ══════════════════════════════════════════════════════════ -->
+<section id="downloads" class="page-section">
+  <div class="site-container">
+    <h2 class="section-heading anchored">Download Data</h2>
+
+    
+<table class="dl-table caption-top table">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">File</th>
+<th data-quarto-table-cell-role="th">Description</th>
+<th data-quarto-table-cell-role="th">Format</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>TPA Index Data</strong></td>
+<td>Full dataset — Sheet 1 (normalized) and Sheet 2 (unnormalized), Jan 2010–Oct 2025</td>
+<td><span class="fmt-badge fmt-xlsx">XLSX</span></td>
+<td><a href="data/TPA_index_data.xlsx" class="dl-btn">Download</a></td>
+</tr>
+<tr class="even">
+<td><strong>Replication Package</strong></td>
+<td>Full code and data supplement (official IMF dataset for WP 2025/220)</td>
+<td><span class="fmt-badge fmt-zip">ZIP</span></td>
+<td><a href="https://www.imf.org/-/media/files/publications/wp/2025/datasets/wp25220.zip" class="dl-btn" target="_blank">Download</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Working Paper (PDF)</strong></td>
+<td>Centorrino, Diakantoni, Keck, Ruta, Sztajerowska, Wei (2025) — IMF WP 2025/220</td>
+<td><span class="fmt-badge fmt-pdf">PDF</span></td>
+<td><a href="https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025220-source-pdf.pdf" class="dl-btn" target="_blank">Download</a></td>
+</tr>
+</tbody>
+</table>
+
+
+    <p class="dl-note">
+      Last updated: October 2025 &nbsp;·&nbsp; 190 monthly observations &nbsp;·&nbsp;
+      Coverage: 197 countries and territories
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ CITATION ══════════════════════════════════════════════════════════ -->
+<section id="citation" class="page-section section-alt">
+  <div class="site-container">
+
+    <h2 class="section-heading anchored">Citation</h2>
+    <p>Please cite as:</p>
+
+    <div class="citation-box">
+      Centorrino, Samuele, Antonia Diakantoni, Alexander Keck, Michele Ruta,
+      Monika Sztajerowska, and Yuting Wei (2025).
+      "<a href="https://www.imf.org/en/publications/wp/issues/2025/10/27/measuring-global-trade-policy-activity-571332" target="_blank">Measuring Global Trade Policy Activity.</a>"
+      <em>IMF Working Paper</em> No.&nbsp;2025/220. International Monetary Fund, Washington, D.C.
+      DOI:&nbsp;<a href="https://doi.org/10.5089/9798229028356.001" target="_blank">10.5089/9798229028356.001</a>
+    </div>
+
+    <div class="bibtex-box">
+      <span class="copy-hint">BibTeX</span>
+@article{centorrino2025tpa,<br>
+&nbsp;&nbsp;title   = {Measuring Global Trade Policy Activity},<br>
+&nbsp;&nbsp;author  = {Centorrino, Samuele and Diakantoni, Antonia and Keck, Alexander<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and Ruta, Michele and Sztajerowska, Monika and Wei, Yuting},<br>
+&nbsp;&nbsp;journal = {IMF Working Paper},<br>
+&nbsp;&nbsp;number  = {2025/220},<br>
+&nbsp;&nbsp;year    = {2025},<br>
+&nbsp;&nbsp;doi     = {10.5089/9798229028356.001}<br>
+}
+    </div>
+
+    <h2 class="section-heading anchored" style="margin-top:2.8rem;">Authors</h2>
+    <div class="author-list">
+      <!-- TODO: Replace .author-name spans with <a href="[url]" class="author-name"> once personal pages available -->
+      <div class="author-item">
+        <span class="author-name">Samuele Centorrino</span>
+        <span class="author-affil">International Monetary Fund</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Antonia Diakantoni</span>
+        <span class="author-affil">World Trade Organization</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Alexander Keck</span>
+        <span class="author-affil">World Trade Organization</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Michele Ruta</span>
+        <span class="author-affil">International Monetary Fund</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Monika Sztajerowska</span>
+        <span class="author-affil">International Monetary Fund</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Yuting Wei</span>
+        <span class="author-affil">International Monetary Fund</span>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      <strong>Disclaimer:</strong> IMF Working Papers describe research in progress by the
+      authors and are published to elicit comments and encourage debate. The views expressed
+      are those of the authors and do not necessarily represent the views of the IMF, its
+      Executive Board, or IMF management.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ CHART JAVASCRIPT ═══════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  function buildPicker() {
+    var picker = document.getElementById('series-picker');
+    if (!picker) return;
+    picker.innerHTML = '';
+    TPA_DATA.series.forEach(function (s, i) {
+      var lbl    = document.createElement('label');
+      var cb     = document.createElement('input');
+      cb.type    = 'checkbox';
+      cb.id      = 'cb-' + s.id;
+      cb.checked = (i === 0);
+      cb.addEventListener('change', tpaUpdate);
+
+      // Filled rectangle swatch (not a line)
+      var swatch = document.createElement('span');
+      swatch.className        = 'swatch';
+      swatch.style.background = s.color;
+
+      lbl.appendChild(cb);
+      lbl.appendChild(swatch);
+      lbl.appendChild(document.createTextNode('\u00a0' + s.label));
+      picker.appendChild(lbl);
+    });
+  }
+
+  window.tpaUpdate = function () {
+    var yrStart = parseInt(document.getElementById('yr-start').value, 10) || 2010;
+    var yrEnd   = parseInt(document.getElementById('yr-end').value,   10) || 2025;
+
+    var dates    = TPA_DATA.dates;
+    var mask     = dates.map(function (d) {
+      var y = parseInt(d.slice(0, 4), 10);
+      return y >= yrStart && y <= yrEnd;
+    });
+    var filtDates = dates.filter(function (_, i) { return mask[i]; });
+
+    var traces = [];
+    TPA_DATA.series.forEach(function (s) {
+      var cb = document.getElementById('cb-' + s.id);
+      if (!cb || !cb.checked) return;
+      var vals = s.values.filter(function (_, i) { return mask[i]; });
+      traces.push({
+        x:    filtDates,
+        y:    vals,
+        type: 'scatter',
+        mode: 'lines',
+        name: s.label,
+        line: { color: s.color, width: 2.5 },
+        hovertemplate: '<b>%{x|%b %Y}</b>: %{y:.1f}<extra>' + s.label + '</extra>'
+      });
+    });
+
+    var layout = {
+      shapes: [
+        { type: 'line', xref: 'x', yref: 'paper',
+          x0: '2019-01-01', x1: '2019-01-01', y0: 0, y1: 1,
+          line: { color: '#C8922A', width: 1.6, dash: 'dot' } },
+        { type: 'rect', xref: 'x', yref: 'paper',
+          x0: '2020-03-01', x1: '2021-03-01', y0: 0, y1: 1,
+          fillcolor: 'rgba(200,146,42,0.07)', line: { width: 0 } }
+      ],
+      annotations: [{
+        xref: 'x', yref: 'paper',
+        x: '2019-03-01', y: 0.97,
+        text: 'Structural break ~2019',
+        showarrow: false, xanchor: 'left',
+        font: { size: 13, color: '#C8922A', family: 'Georgia,serif' }
+      }],
+      xaxis: {
+        type: 'date',
+        tickfont:  { size: 14, color: '#333', family: 'Georgia,serif' },
+        showgrid:  false, zeroline: false, title: ''
+      },
+      yaxis: {
+        title: { text: 'TPA Index', font: { size: 14, color: '#333', family: 'Georgia,serif' } },
+        tickfont:  { size: 14, color: '#333', family: 'Georgia,serif' },
+        gridcolor: '#e8e8e8',
+        zeroline: true, zerolinecolor: '#bbbbbb', zerolinewidth: 1
+      },
+      legend: {
+        orientation: 'h',
+        x: 0, xanchor: 'left',
+        y: -0.22, yanchor: 'top',
+        font: { size: 13, family: 'Georgia,serif' },
+        bgcolor: 'rgba(255,255,255,0)',
+        // Use filled squares in legend (not lines)
+        itemsizing: 'constant'
+      },
+      showlegend:    true,
+      paper_bgcolor: 'white',
+      plot_bgcolor:  'white',
+      font:          { family: 'Georgia,serif' },
+      margin:        { l: 75, r: 25, t: 30, b: 160 },
+      hovermode:     'x unified'
+    };
+
+    var config = {
+      responsive: true,
+      displayModeBar: true,
+      modeBarButtonsToRemove: ['zoom2d','pan2d','select2d','lasso2d',
+                                'autoScale2d','toggleSpikelines'],
+      displaylogo: false,
+      toImageButtonOptions: {
+        format: 'png', filename: 'tpa_index', width: 1300, height: 600
+      }
+    };
+
+    if (traces.length === 0) {
+      Plotly.purge('tpa-chart-out');
+    } else {
+      Plotly.react('tpa-chart-out', traces, layout, config);
+    }
+  };
+
+  function init() {
+    buildPicker();
+    tpaUpdate();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Centorrino, Diakantoni, Keck, Ruta, Sztajerowska, Wei · IMF Working Paper 2025/220</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Views expressed are those of the authors, not the IMF.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
