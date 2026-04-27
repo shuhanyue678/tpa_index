@@ -1,0 +1,481 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: Georgia, 'Times New Roman', Times, serif;
+$headings-font-family:   Georgia, 'Times New Roman', Times, serif;
+$font-family-monospace:  'Courier New', Courier, monospace;
+
+$imf-navy:      #003A70;
+$imf-blue:      #004C97;
+$imf-gold:      #C8922A;
+$imf-off-white: #F8F8F8;
+$imf-text:      #111111;
+$imf-muted:     #555555;
+$imf-border:    #dddddd;
+
+$primary:              $imf-blue;
+$body-bg:              #ffffff;
+$body-color:           $imf-text;
+$link-color:           $imf-blue;
+$headings-color:       $imf-text;
+$headings-font-weight: 700;
+$navbar-bg:            $imf-navy;
+$navbar-fg:            #ffffff;
+$font-size-base:       1.25rem;   // was 1.15, now +3 units (~0.1875rem per unit in Sass ≈ bumped ~3 steps)
+$line-height-base:     1.82;
+
+/*-- scss:rules --*/
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+  color: $imf-text;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: $imf-blue; }
+a:hover { color: darken($imf-blue, 12%); }
+
+// ── QUARTO LAYOUT RESET ────────────────────────────────────────────────────
+.page-layout-full > #quarto-content > div {
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+.page-columns          { display: block !important; }
+#quarto-margin-sidebar { display: none !important; }
+.quarto-title-block    { display: none !important; }
+
+// ── STICKY NAVBAR ──────────────────────────────────────────────────────────
+.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+  padding: 0.55rem 2rem;
+  background: $imf-navy !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.28);
+
+  .navbar-brand {
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: white !important;
+  }
+
+  .nav-link {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.85) !important;
+    font-family: Georgia, serif;
+    padding: 0.35rem 0.9rem !important;
+    transition: color 0.15s;
+    &:hover { color: #fff !important; }
+  }
+}
+
+// Push page content down so fixed navbar doesn't overlap hero
+body { padding-top: 58px !important; }
+
+// Kill every possible Quarto gap
+#quarto-content,
+#quarto-content > *,
+.page-layout-full > #quarto-content > div { margin-top: 0 !important; padding-top: 0 !important; }
+.hero-section { margin-top: 0 !important; }
+
+// ── SITE CONTAINER ─────────────────────────────────────────────────────────
+.site-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 100px;
+
+  @media (max-width: 1100px) { padding: 0 50px; }
+  @media (max-width: 700px)  { padding: 0 20px; }
+}
+
+// ── HERO — centered text like MATR ─────────────────────────────────────────
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 54vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  // warm sunset port photo — keep lower half darker for readability
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(10, 20, 40, 0.35) 0%,
+      rgba(10, 20, 40, 0.62) 100%
+    ),
+    url('assets/hero-bg.jpg') center 40% / cover no-repeat;
+  overflow: hidden;
+}
+
+.hero-center {
+  padding: 3rem 2rem 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      // horizontally center all children
+  text-align: center;
+
+  @media (max-width: 700px) { padding: 2rem 1.5rem 2.5rem; }
+}
+
+// MATR-style title: first letter bold + underlined, single line, centered
+.hero-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+  text-decoration: none;
+  white-space: nowrap;
+  text-align: center;
+
+  @media (max-width: 900px) { white-space: normal; font-size: 2rem; }
+
+  u {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgba(255,255,255,0.9);
+    font-weight: 900;
+  }
+}
+
+// hide abbrev line
+.hero-abbrev { display: none; }
+
+// subtitle — bold, same visual width as title (no max-width constraint), centered
+.hero-sub {
+  font-family: Georgia, serif;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-style: italic;
+  font-weight: 700;           // bold to match title weight
+  color: rgba(255,255,255,0.92);
+  line-height: 1.72;
+  text-align: center;
+  white-space: nowrap;        // keep on one line like the title above
+  margin: 0;
+
+  @media (max-width: 900px) { white-space: normal; }
+}
+
+// ── META STRIP ─────────────────────────────────────────────────────────────
+.meta-strip {
+  background: $imf-navy;
+  padding: 0.65rem 0;
+
+  .meta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .badge-updated {
+    display: inline-block;
+    background: rgba(200,146,42,0.2);
+    border: 1px solid rgba(200,146,42,0.5);
+    color: #F5D89A;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.22rem 0.65rem;
+    border-radius: 2px;
+  }
+
+  .meta-authors {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.65);
+    font-style: italic;
+  }
+}
+
+// ── PAGE SECTIONS ──────────────────────────────────────────────────────────
+.page-section {
+  padding: 3.5rem 0 3rem;
+  border-top: 1px solid $imf-border;
+}
+.section-alt { background: $imf-off-white; }
+
+.section-heading {
+  font-family: Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: $imf-text;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid $imf-text;
+}
+
+// ── ABOUT ──────────────────────────────────────────────────────────────────
+.about-lead {
+  font-size: 1.2rem;
+  line-height: 1.88;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 3.5rem;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 700px) { grid-template-columns: 1fr; }
+}
+
+.two-col-item {
+  h3 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: $imf-text;
+    margin: 0 0 0.65rem;
+  }
+  p {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: $imf-text;
+    text-align: justify;
+    margin: 0;
+  }
+}
+
+// ── CHART SECTION ──────────────────────────────────────────────────────────
+.chart-controls {
+  background: #f0f0f0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-end;
+
+  .ctrl-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $imf-text;
+    }
+
+    input[type=number] {
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      border: 1px solid #aaaaaa;
+      border-radius: 3px;
+      padding: 0.32rem 0.6rem;
+      width: 105px;
+      color: $imf-text;
+      background: #fff;
+      &:focus { outline: 2px solid $imf-blue; border-color: transparent; }
+    }
+  }
+
+  .ctrl-btn {
+    background: $imf-text;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.4rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    &:hover { background: #333; }
+  }
+}
+
+// Series picker — color-filled rectangles instead of lines
+.series-picker {
+  margin-bottom: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.5rem;
+
+  label {
+    font-size: 1.0rem;
+    font-family: Georgia, serif;
+    color: $imf-text;
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+    cursor: pointer;
+    user-select: none;
+
+    input[type=checkbox] {
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      accent-color: $imf-blue;
+    }
+
+    // Filled rectangle swatch — replaces the thin line
+    .swatch {
+      display: inline-block;
+      width: 26px;
+      height: 14px;
+      border-radius: 2px;
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+  }
+}
+
+#tpa-chart-out {
+  width: 100%;
+  height: 560px;
+  min-height: 560px;
+}
+
+.chart-note {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: $imf-muted;
+  margin-top: 0.8rem;
+  line-height: 1.65;
+  padding-bottom: 0.5rem;
+}
+
+// ── DOWNLOAD TABLE — force single line per row ─────────────────────────────
+.dl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.05rem;
+  font-family: Georgia, serif;
+  margin-bottom: 0.8rem;
+  table-layout: fixed;
+
+  col.col-file  { width: 26%; }
+  col.col-desc  { width: 44%; }
+  col.col-fmt   { width: 14%; }
+  col.col-btn   { width: 16%; }
+
+  thead tr {
+    border-bottom: 2px solid $imf-text;
+    th {
+      padding: 0.6rem 0.8rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: left;
+      color: $imf-text;
+      white-space: nowrap;
+    }
+    th:nth-child(3) { text-align: center; }  // Format header centered
+  }
+
+  tbody tr {
+    border-bottom: 1px solid $imf-border;
+    &:hover { background: #f5f5f5; }
+    td {
+      padding: 0.75rem 0.8rem;
+      vertical-align: middle;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    td:nth-child(2) { white-space: normal; }
+    td:nth-child(3) { text-align: center; }
+  }
+}
+
+.fmt-badge {
+  font-size: 0.78rem; font-weight: 700;
+  padding: 0.18rem 0.5rem; border-radius: 2px;
+  letter-spacing: 0.04em; display: inline-block;
+}
+.fmt-xlsx { background: #e3f0e8; color: #276234; }
+.fmt-csv  { background: #e3f0e8; color: #276234; }
+.fmt-zip  { background: #fef3e2; color: #7a4700; }
+.fmt-pdf  { background: #fde8e8; color: #8b0000; }
+
+.dl-btn {
+  display: inline-block;
+  background: $imf-text;
+  color: #fff !important;
+  font-family: Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 2px;
+  text-decoration: none !important;
+  white-space: nowrap;
+  transition: background 0.15s;
+  &:hover { background: #333; }
+}
+
+.dl-note { font-size: 0.95rem; color: $imf-muted; margin-top: 0.5rem; font-style: italic; }
+
+.var-note {
+  background: #f5f5f5;
+  border-left: 3px solid #aaaaaa;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.98rem;
+  line-height: 1.72;
+  color: $imf-muted;
+  margin-top: 1.1rem;
+}
+
+// ── CITATION ───────────────────────────────────────────────────────────────
+.citation-box {
+  background: #f5f5f5;
+  border-left: 3px solid $imf-text;
+  padding: 1.1rem 1.3rem;
+  font-size: 1.05rem;
+  line-height: 1.82;
+  color: $imf-text;
+  margin-bottom: 1.1rem;
+}
+
+.bibtex-box {
+  background: #1a1a1a;
+  color: #b0c8e0;
+  padding: 1.1rem 1.3rem;
+  border-radius: 3px;
+  font-family: $font-family-monospace;
+  font-size: 0.9rem;
+  line-height: 1.68;
+  position: relative;
+
+  .copy-hint {
+    position: absolute; top: 0.5rem; right: 0.8rem;
+    font-size: 0.74rem; color: rgba(176,200,224,0.4);
+  }
+}
+
+// ── AUTHORS ────────────────────────────────────────────────────────────────
+.author-list {
+  margin: 0.4rem 0 1.3rem;
+
+  .author-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.52rem 0;
+    border-bottom: 1px solid $imf-border;
+    font-size: 1.05rem;
+    &:last-child { border-bottom: none; }
+
+    .author-name  { font-weight: 700; color: $imf-text; min-width: 220px; }
+    .author-affil { font-size: 0.98rem; color: $imf-muted; font-style: italic; }
+  }
+}
+
+.disclaimer {
+  font-size: 0.94rem; color: $imf-muted;
+  line-height: 1.72; margin-top: 1.4rem; font-style: italic;
+}
+
+.nav-footer { font-size: 0.9rem; padding: 0.8rem 2rem; }

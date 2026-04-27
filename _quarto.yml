@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "TPA Index"
+  description: "Trade Policy Activity Index — IMF Working Paper 2025/220"
+
+  navbar:
+    background: "#003A70"
+    foreground: white
+    title: "TPA Index"
+    search: false
+    left:
+      - text: "About"
+        href: "index.html#about"
+      - text: "Interactive Chart"
+        href: "index.html#chart"
+      - text: "Downloads"
+        href: "index.html#downloads"
+      - text: "Citation"
+        href: "index.html#citation"
+    right:
+      - text: "Paper (PDF)"
+        href: "https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025220-source-pdf.pdf"
+
+  page-footer:
+    left: "© 2025 Centorrino, Diakantoni, Keck, Ruta, Sztajerowska, Wei · IMF Working Paper 2025/220"
+    right: "Views expressed are those of the authors, not the IMF."
+    background: "#003A70"
+    foreground: "#aabbcc"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles/custom.scss
+    css: styles/custom.css
+    toc: false
+    page-layout: full
+    smooth-scroll: true

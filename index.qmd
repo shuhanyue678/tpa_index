@@ -1,0 +1,428 @@
+---
+title: "Trade Policy Activity Index"
+page-layout: full
+toc: false
+---
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| results: 'asis'
+
+library(jsonlite)
+
+df <- read.csv("data/tpa_main.csv", stringsAsFactors = FALSE)
+df$date <- as.Date(paste0("01 ", df$Date), format = "%d %b %Y")
+df <- df[order(df$date), ]
+names(df) <- gsub("_filtered_normalized", "", names(df))
+names(df)[names(df) == "Global_Factor"]    <- "Global"
+names(df)[names(df) == "Remaining_others"] <- "Remaining_Other"
+
+series_meta <- list(
+  list(id="Global",          label="Global TPA Index",                  color="#004C97"),
+  list(id="Facilitating",    label="Facilitating measures",              color="#2E8B57"),
+  list(id="Other",           label="Other (non-facilitating)",           color="#C8922A"),
+  list(id="Restrictive",     label="Restrictive (subset of Other)",      color="#C0392B"),
+  list(id="Remaining_Other", label="Remaining other (subset of Other)",  color="#7B4F9E"),
+  list(id="G20",             label="G20 economies",                      color="#0071BC"),
+  list(id="Non_G20",         label="Non-G20 economies",                  color="#E67E22"),
+  list(id="GDP_weighted",    label="GDP-weighted index",                  color="#8B6914")
+)
+
+for (i in seq_along(series_meta)) {
+  series_meta[[i]]$values <- as.numeric(df[[ series_meta[[i]]$id ]])
+}
+
+payload <- list(dates = format(df$date, "%Y-%m-%d"), series = series_meta)
+cat('<script>var TPA_DATA =', toJSON(payload, auto_unbox=TRUE, na="null"), ';</script>\n')
+```
+
+```{=html}
+<script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════════════════ -->
+<section class="hero-section">
+  <div class="hero-center">
+    <h1 class="hero-title">
+      <u>T</u>rade <u>P</u>olicy <u>A</u>ctivity Index
+    </h1>
+    <span class="hero-abbrev"></span>
+    <p class="hero-sub">
+      A novel composite indicator measuring the evolution of global trade policy
+      since the Global Financial Crisis, covering 197 countries and territories.
+    </p>
+  </div>
+</section>
+
+<!-- meta strip -->
+<div class="meta-strip">
+  <div class="site-container">
+    <div class="meta-inner">
+      <span class="badge-updated">✓ &nbsp;Updated through October 2025</span>
+      <span class="meta-authors">
+        <!-- TODO: wrap each name in <a href="[url]"> when personal pages available -->
+        Samuele Centorrino &nbsp;·&nbsp; Antonia Diakantoni &nbsp;·&nbsp;
+        Alexander Keck &nbsp;·&nbsp; Michele Ruta &nbsp;·&nbsp;
+        Monika Sztajerowska &nbsp;·&nbsp; Yuting Wei
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ ABOUT ══════════════════════════════════════════════════════════════ -->
+<section id="about" class="page-section">
+  <div class="site-container">
+    <h2 class="section-heading">About the TPA Index</h2>
+
+    <p class="about-lead">
+      The Trade Policy Activity (TPA) Index is a composite indicator of global trade policy
+      activity, constructed using a Dynamic Factor Model applied to comprehensive data on
+      trade policy interventions across 197 countries and territories since January 2010.
+      The index documents a structural shift around 2019, reflecting a substantial and
+      persistent expansion in the use of trade policy measures globally.
+    </p>
+
+    <div class="two-col-grid">
+      <div class="two-col-item">
+        <h3>How has it been constructed?</h3>
+        <p>
+          The TPA Index is estimated using a Dynamic Factor Model (DFM) on a large
+          cross-section of monthly trade policy intervention data sourced from the
+          Global Trade Alert (GTA) and WTO databases. The model extracts a common
+          factor from the co-movement across country- and measure-level series,
+          interpreted as aggregate global trade policy activity. All series are
+          smoothed using a three-month moving average and normalized so that the
+          average equals zero over January 2010–December 2011. The index additionally
+          incorporates Mixed Data Sampling (MIDAS) regressions on high-frequency GTA
+          data to enable real-time nowcasting of trade policy shifts.
+        </p>
+      </div>
+      <div class="two-col-item">
+        <h3>What does it include?</h3>
+        <p>
+          The dataset provides eight monthly series from January 2010 to October 2025:
+          a <strong>Global Factor</strong> (baseline worldwide index);
+          a <strong>Facilitating</strong> sub-index (trade-liberalizing measures and rollbacks);
+          an <strong>Other</strong> sub-index (non-facilitating measures including tariff
+          increases, bans, quotas, and subsidies);
+          a <strong>Restrictive</strong> sub-index (trade-restricting subset of Other);
+          a <strong>Remaining other</strong> sub-index (largely subsidies and industrial policy);
+          <strong>G20</strong> and <strong>Non-G20</strong> economy indices;
+          and a <strong>GDP-weighted</strong> index using pre-sample GDP shares (2005–2009)
+          as time-invariant weights.
+        </p>
+      </div>
+    </div>
+
+    <div class="two-col-grid">
+      <div class="two-col-item">
+        <h3>Why is it different from other measures?</h3>
+        <p>
+          Existing trade policy measures tend to focus on tariffs alone or rely on
+          annual survey data. The TPA Index covers the full range of policy instruments —
+          tariffs, non-tariff barriers, export restrictions, and industrial policy — at
+          monthly frequency across a near-global sample. Its DFM framework extracts the
+          underlying co-movement rather than simply counting interventions, and the MIDAS
+          nowcasting component enables real-time monitoring well ahead of official data releases.
+        </p>
+      </div>
+      <div class="two-col-item">
+        <h3>What are the key findings?</h3>
+        <p>
+          The TPA Index identifies a structural break around 2019 — a persistent expansion
+          in global trade policy activity departing from the post-GFC baseline. Beyond this
+          trend, the index captures cyclical spikes during the 2018–19 US–China trade war,
+          COVID-19 supply chain disruptions, and the post-2022 wave of industrial policy.
+          G20 and non-G20 economies differ significantly in the timing, intensity, and
+          instrument mix of their trade policy responses.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ INTERACTIVE CHART ══════════════════════════════════════════════════ -->
+<section id="chart" class="page-section section-alt">
+  <div class="site-container">
+    <h2 class="section-heading">Interactive Chart</h2>
+
+    <div class="chart-controls">
+      <div class="ctrl-group">
+        <label>Start Year</label>
+        <input type="number" id="yr-start" value="2010" min="2010" max="2025">
+      </div>
+      <div class="ctrl-group">
+        <label>End Year</label>
+        <input type="number" id="yr-end" value="2025" min="2010" max="2025">
+      </div>
+      <div class="ctrl-group">
+        <label style="visibility:hidden">go</label>
+        <button class="ctrl-btn" onclick="tpaUpdate()">Update</button>
+      </div>
+    </div>
+
+    <div class="series-picker" id="series-picker"></div>
+
+    <div id="tpa-chart-out" style="width:100%;height:560px;min-height:560px;"></div>
+
+    <p class="chart-note">
+      <em>Note:</em> Three-month moving average applied. Normalized: mean&nbsp;=&nbsp;0 over Jan 2010–Dec 2011; stationary component rescaled to match the standard deviation of the baseline global factor over Jan 2010–Dec 2019. Dashed vertical line: estimated structural break (~2019). Shaded band: COVID-19 period (Mar 2020–Mar 2021).
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ DOWNLOADS ══════════════════════════════════════════════════════════ -->
+<section id="downloads" class="page-section">
+  <div class="site-container">
+    <h2 class="section-heading">Download Data</h2>
+
+    <table class="dl-table">
+      <colgroup>
+        <col class="col-file">
+        <col class="col-desc">
+        <col class="col-fmt">
+        <col class="col-btn">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>Description</th>
+          <th>Format</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>TPA Index Data</strong></td>
+          <td>Full dataset — Sheet 1 (normalized) and Sheet 2 (unnormalized), Jan 2010–Oct 2025</td>
+          <td><span class="fmt-badge fmt-xlsx">XLSX</span></td>
+          <td><a href="data/TPA_index_data.xlsx" class="dl-btn">Download</a></td>
+        </tr>
+        <tr>
+          <td><strong>Replication Package</strong></td>
+          <td>Full code and data supplement (official IMF dataset for WP 2025/220)</td>
+          <td><span class="fmt-badge fmt-zip">ZIP</span></td>
+          <td><a href="https://www.imf.org/-/media/files/publications/wp/2025/datasets/wp25220.zip"
+                 class="dl-btn" target="_blank">Download</a></td>
+        </tr>
+        <tr>
+          <td><strong>Working Paper (PDF)</strong></td>
+          <td>Centorrino, Diakantoni, Keck, Ruta, Sztajerowska, Wei (2025) — IMF WP 2025/220</td>
+          <td><span class="fmt-badge fmt-pdf">PDF</span></td>
+          <td><a href="https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025220-source-pdf.pdf"
+                 class="dl-btn" target="_blank">Download</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="dl-note">
+      Last updated: October 2025 &nbsp;·&nbsp; 190 monthly observations &nbsp;·&nbsp;
+      Coverage: 197 countries and territories
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ CITATION ══════════════════════════════════════════════════════════ -->
+<section id="citation" class="page-section section-alt">
+  <div class="site-container">
+
+    <h2 class="section-heading">Citation</h2>
+    <p>Please cite as:</p>
+
+    <div class="citation-box">
+      Centorrino, Samuele, Antonia Diakantoni, Alexander Keck, Michele Ruta,
+      Monika Sztajerowska, and Yuting Wei (2025).
+      "<a href="https://www.imf.org/en/publications/wp/issues/2025/10/27/measuring-global-trade-policy-activity-571332"
+         target="_blank">Measuring Global Trade Policy Activity.</a>"
+      <em>IMF Working Paper</em> No.&nbsp;2025/220. International Monetary Fund, Washington, D.C.
+      DOI:&nbsp;<a href="https://doi.org/10.5089/9798229028356.001" target="_blank">10.5089/9798229028356.001</a>
+    </div>
+
+    <div class="bibtex-box">
+      <span class="copy-hint">BibTeX</span>
+@article{centorrino2025tpa,<br>
+&nbsp;&nbsp;title   = {Measuring Global Trade Policy Activity},<br>
+&nbsp;&nbsp;author  = {Centorrino, Samuele and Diakantoni, Antonia and Keck, Alexander<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and Ruta, Michele and Sztajerowska, Monika and Wei, Yuting},<br>
+&nbsp;&nbsp;journal = {IMF Working Paper},<br>
+&nbsp;&nbsp;number  = {2025/220},<br>
+&nbsp;&nbsp;year    = {2025},<br>
+&nbsp;&nbsp;doi     = {10.5089/9798229028356.001}<br>
+}
+    </div>
+
+    <h2 class="section-heading" style="margin-top:2.8rem;">Authors</h2>
+    <div class="author-list">
+      <!-- TODO: Replace .author-name spans with <a href="[url]" class="author-name"> once personal pages available -->
+      <div class="author-item">
+        <span class="author-name">Samuele Centorrino</span>
+        <span class="author-affil">International Monetary Fund</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Antonia Diakantoni</span>
+        <span class="author-affil">World Trade Organization</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Alexander Keck</span>
+        <span class="author-affil">World Trade Organization</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Michele Ruta</span>
+        <span class="author-affil">International Monetary Fund</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Monika Sztajerowska</span>
+        <span class="author-affil">International Monetary Fund</span>
+      </div>
+      <div class="author-item">
+        <span class="author-name">Yuting Wei</span>
+        <span class="author-affil">International Monetary Fund</span>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      <strong>Disclaimer:</strong> IMF Working Papers describe research in progress by the
+      authors and are published to elicit comments and encourage debate. The views expressed
+      are those of the authors and do not necessarily represent the views of the IMF, its
+      Executive Board, or IMF management.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ CHART JAVASCRIPT ═══════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  function buildPicker() {
+    var picker = document.getElementById('series-picker');
+    if (!picker) return;
+    picker.innerHTML = '';
+    TPA_DATA.series.forEach(function (s, i) {
+      var lbl    = document.createElement('label');
+      var cb     = document.createElement('input');
+      cb.type    = 'checkbox';
+      cb.id      = 'cb-' + s.id;
+      cb.checked = (i === 0);
+      cb.addEventListener('change', tpaUpdate);
+
+      // Filled rectangle swatch (not a line)
+      var swatch = document.createElement('span');
+      swatch.className        = 'swatch';
+      swatch.style.background = s.color;
+
+      lbl.appendChild(cb);
+      lbl.appendChild(swatch);
+      lbl.appendChild(document.createTextNode('\u00a0' + s.label));
+      picker.appendChild(lbl);
+    });
+  }
+
+  window.tpaUpdate = function () {
+    var yrStart = parseInt(document.getElementById('yr-start').value, 10) || 2010;
+    var yrEnd   = parseInt(document.getElementById('yr-end').value,   10) || 2025;
+
+    var dates    = TPA_DATA.dates;
+    var mask     = dates.map(function (d) {
+      var y = parseInt(d.slice(0, 4), 10);
+      return y >= yrStart && y <= yrEnd;
+    });
+    var filtDates = dates.filter(function (_, i) { return mask[i]; });
+
+    var traces = [];
+    TPA_DATA.series.forEach(function (s) {
+      var cb = document.getElementById('cb-' + s.id);
+      if (!cb || !cb.checked) return;
+      var vals = s.values.filter(function (_, i) { return mask[i]; });
+      traces.push({
+        x:    filtDates,
+        y:    vals,
+        type: 'scatter',
+        mode: 'lines',
+        name: s.label,
+        line: { color: s.color, width: 2.5 },
+        hovertemplate: '<b>%{x|%b %Y}</b>: %{y:.1f}<extra>' + s.label + '</extra>'
+      });
+    });
+
+    var layout = {
+      shapes: [
+        { type: 'line', xref: 'x', yref: 'paper',
+          x0: '2019-01-01', x1: '2019-01-01', y0: 0, y1: 1,
+          line: { color: '#C8922A', width: 1.6, dash: 'dot' } },
+        { type: 'rect', xref: 'x', yref: 'paper',
+          x0: '2020-03-01', x1: '2021-03-01', y0: 0, y1: 1,
+          fillcolor: 'rgba(200,146,42,0.07)', line: { width: 0 } }
+      ],
+      annotations: [{
+        xref: 'x', yref: 'paper',
+        x: '2019-03-01', y: 0.97,
+        text: 'Structural break ~2019',
+        showarrow: false, xanchor: 'left',
+        font: { size: 13, color: '#C8922A', family: 'Georgia,serif' }
+      }],
+      xaxis: {
+        type: 'date',
+        tickfont:  { size: 14, color: '#333', family: 'Georgia,serif' },
+        showgrid:  false, zeroline: false, title: ''
+      },
+      yaxis: {
+        title: { text: 'TPA Index', font: { size: 14, color: '#333', family: 'Georgia,serif' } },
+        tickfont:  { size: 14, color: '#333', family: 'Georgia,serif' },
+        gridcolor: '#e8e8e8',
+        zeroline: true, zerolinecolor: '#bbbbbb', zerolinewidth: 1
+      },
+      legend: {
+        orientation: 'h',
+        x: 0, xanchor: 'left',
+        y: -0.22, yanchor: 'top',
+        font: { size: 13, family: 'Georgia,serif' },
+        bgcolor: 'rgba(255,255,255,0)',
+        // Use filled squares in legend (not lines)
+        itemsizing: 'constant'
+      },
+      showlegend:    true,
+      paper_bgcolor: 'white',
+      plot_bgcolor:  'white',
+      font:          { family: 'Georgia,serif' },
+      margin:        { l: 75, r: 25, t: 30, b: 160 },
+      hovermode:     'x unified'
+    };
+
+    var config = {
+      responsive: true,
+      displayModeBar: true,
+      modeBarButtonsToRemove: ['zoom2d','pan2d','select2d','lasso2d',
+                                'autoScale2d','toggleSpikelines'],
+      displaylogo: false,
+      toImageButtonOptions: {
+        format: 'png', filename: 'tpa_index', width: 1300, height: 600
+      }
+    };
+
+    if (traces.length === 0) {
+      Plotly.purge('tpa-chart-out');
+    } else {
+      Plotly.react('tpa-chart-out', traces, layout, config);
+    }
+  };
+
+  function init() {
+    buildPicker();
+    tpaUpdate();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+```
